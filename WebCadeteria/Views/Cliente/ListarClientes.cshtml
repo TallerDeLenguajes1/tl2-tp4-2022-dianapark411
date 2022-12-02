@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Listar Clientes";
+}
+
+<div class="text-center">
+    <h2>Clientes en el sistema</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Nombre</th><th>Dirrecion</th><th>Telefono</th><th>Ref direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                string path = @"C:\DIANA\Facultad\3er ANIO\2do Cuatrimestre\Taller de lenguajes II\TP4\tl2-tp4-2022-dianapark411\WebCadeteria\Recursos\clientes.csv";
+                string[]leer = System.IO.File.ReadAllLines(path);}
+                @foreach (string item in leer)
+                {
+                    string[]linea = item.Split(";");
+                    <Tr>
+                        <Td>@linea[0]</Td>
+                        <Td>@linea[1]</Td>
+                        <Td>@linea[2]</Td>
+                        <Td>@linea[3]</Td>
+                        <Td>@linea[4]</Td>
+                    </Tr>
+                }
+    </table>
+    
+    
+</div>
